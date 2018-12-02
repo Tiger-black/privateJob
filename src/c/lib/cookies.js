@@ -1,3 +1,7 @@
+/**
+ * 链接处理工具
+ * @author dezhao
+ */
 'use strict';
 
 function Index() {}

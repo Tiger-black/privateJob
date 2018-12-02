@@ -1,3 +1,7 @@
+/**
+ * 链接处理工具
+ * @author dezhao
+ */
 'use strict';
 
 function Index() {
@@ -25,10 +29,9 @@ Index.prototype = {
                 thisqs = thisqs.replace(/#/g, '');
                 var pairs = thisqs.split('&');
                 for (var i = 0; i < pairs.length; i++) {
-                    // var pair = pairs[i].split('=');
-                    // qsobj[pair[0]] = pair[1];
-                    var num=pairs[i].indexOf("=");
-                    qsobj[pairs[i].substring(0,num)] = pairs[i].substr(num+1);
+                    var pair = pairs[i].split('=');
+                    qsobj[pair[0]] = pair[1];
+                    
                 }
             }
             return qsobj;

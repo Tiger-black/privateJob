@@ -1,0 +1,33 @@
+<div class="cardTJ"><p>卡片推荐</p></div>
+<ul class="tagfore">
+	<% data.forEach(function(item,index){ 
+		%>
+				<li class='rowItem'>
+						<h3><%= item.name%></h3>
+						<dl>
+							<dd>
+								<img src="<%= item.imgUrl.replace(/(.*)\./, '$1_200x200q90.')%>" alt="">
+							</dd>
+							<dt>
+								<% if(item.privilegeList.length==0){%>
+									<p class="hide"></p>
+									<p class="hide"></p>
+									<div class="gobtn"><button class="btn"></button></div>
+								<%}%>
+								<% if(item.privilegeList.length==1){%>
+									<p><%= item.privilegeList[0].title%></p>
+									<p class="hide"></p>
+									<div class="gobtn"><button class="btn"></button></div>
+								<%}%>
+								<% if(item.privilegeList.length>=2){%>
+									<p><%= item.privilegeList[0].title%></p>
+									<p><%= item.privilegeList[1].title%></p>
+									<div class="gobtn"><button class="btn"></button></div>
+								<%}%>
+								
+							</dt>
+						</dl>
+					</li>
+		
+	<%})%>
+</ul>

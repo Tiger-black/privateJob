@@ -1,0 +1,22 @@
+<%console.log($('.J_selected'))%>
+<div class="J_selectorCard">
+    <div class="selector-warpper">
+        <ul class="J_selectArea">
+            <% data.typeList.forEach(function(item, index){ %>
+            <li class="J_selectItem <%if($('.J_selected')){%>$('.creditcard_top_right').addClass('checkCenter_title')<%}else{%>$('.creditcard_top_right').removeClass('checkCenter_title')<%}%> <%if(item.isSelect){%>J_selected<%}%>" data-index='<%= item.code%>' data-val='<%= index%>'>
+                <span><%= item.name %></span>
+                <span class="iconfont cardCheck">&#xe671;</span>
+                <span class="iconfont cardChecked">&#xe672;</span>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="select-menu-warpper">
+        <div class="J_cancleSelect resetcancle">
+            <div class="J_button_inner">重置</div>
+        </div>
+        <div class="J_confirmSelect sureconfirm">
+            <div class="J_button_inner">确定</div>
+        </div>
+    </div>
+</div>

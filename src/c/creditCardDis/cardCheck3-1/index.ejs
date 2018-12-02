@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="tip"><font>请选择您已持有的信用卡</font><div class="iconfont">&#xe61a;</div></div>
+    <div class="bankList">
+        <ul class="bankWap">
+            <% if(data.length>10){%>
+                <% for(var i=0;i< Math.ceil((data.length-1)/12);i++){%>
+                    <li class="bankWapLi">
+                            <ul class="tag">
+                                <% for(var j=i*12;j<((data.length)<(i+1)*12?data.length:(i+1)*12);j++){
+                                    if(data[j].code!==""){%>
+                                <li  data-index='<%= j%>'>
+                                    <div class="bankIcon" data-code="<%= data[j].code%>" data-logo="<%= data[j].logoUrl%>">
+                                            <img src="<%= data[j].logoUrl.replace(/(.*)\./, '$1_105x105q90.')%>">
+                                            <div class="coverDiv"></div>
+                                    </div>
+                                    <p><%= data[j].name%></p>
+                                </li>
+                                <% }} %>
+                            </ul>
+                        </li>
+                <% } %>
+            <%}else{%>
+                <li class="bankWapLi">
+                        <ul class="tag tag9">
+                            <% for(var i=0;i<data.length;i++){
+                                if(data[i].code!==""){%>
+                                
+                            <li  data-index='<%= i%>'>
+                                <div class="bankIcon bankIcon9" data-code="<%= data[i].code%>" data-logo="<%= data[i].logoUrl%>">
+                                        <img src="<%= data[i].logoUrl.replace(/(.*)\./, '$1_105x105q90.')%>">
+                                        <div class="coverDiv"></div>
+                                </div>
+                                <p><%= data[i].name%></p>
+                            </li>
+                            <% }} %>
+                        </ul>
+                    </li>
+            <%}%>
+                
+        </ul>    
+    </div>
+    <div class="pointer">
+            <% if(data.length>10){%>
+                <% for(var i=0;i< Math.ceil((data.length-1)/12);i++){%>
+                <span>•</span>
+                <% } %>
+            <%}else{%>
+                <span>•</span>
+            <%}%>
+       
+    </div>
+    <div class="btn"><button class="disDone"></button><button class="nextBtn disview"></button></div>
+</div>

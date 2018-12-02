@@ -1,0 +1,53 @@
+@import '../less/common.less';
+
+.J-news-detail-block{
+    .news-title{
+       text-align: center; 
+       font-size: 32px;
+       font-weight: 800;
+       height: auto;
+       line-height: 60px;
+    }
+   .news-time{
+       text-align: center;
+       font-size: 12px;
+       color: #999;
+       margin: 20px 0;
+   }
+   .line{
+       border: none;
+       border-bottom: 1px solid #ddd;
+   }
+   .news-content{
+       margin: 0 auto;
+       font-size: 14px;
+       line-height: 28px;
+       text-align: justify; 
+       text-indent: 28px;
+       img{
+           display: inline-block;
+       }
+       p{
+           padding: 10px 0;
+       }
+   }
+}
+@media screen and (min-width:800px){
+    .news-content{
+        width: 800px;
+    }
+}
+
+
+@media screen and (max-width:375px){
+    .J-news-detail-block{
+        .news-title{
+            font-size: 18px;
+            height: auto;
+            line-height: 24px;
+        }
+        .news-content{
+            width: 100%;
+        }
+    }
+}

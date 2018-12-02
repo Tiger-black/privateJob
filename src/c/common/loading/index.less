@@ -1,0 +1,169 @@
+@import "../../less/variable";
+
+.J_Loading {
+  width: 240/@rem;
+  height: 240/@rem;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20/@rem;
+  .loading-animate-8();
+}
+
+.loading-animate-4(){
+  @color: #ffffff;
+  .loader {
+    font-size: 12px;
+    margin: 5/@rem auto;
+    width: 16/@rem;
+    height: 16/@rem;
+    border-radius: 50%;
+    position: relative;
+    top: 40%;
+    text-indent: -9999em;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load 1.3s infinite linear;
+    animation: load 1.3s infinite linear;
+  }
+  .loader:before, .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+  @-webkit-keyframes load {
+    0%,
+    100% {
+      box-shadow:
+                0em -3em 0em 0.2em @color,
+                2em -2em 0 0em @color,
+                3em 0em 0 -0.5em @color,
+                2em 2em 0 -0.5em @color,
+                0em 3em 0 -0.5em @color,
+                -2em 2em 0 -0.5em @color,
+                -3em 0em 0 -0.5em @color,
+                -2em -2em 0 0em @color;
+    }
+    12.5% {
+      box-shadow:
+                0em -3em 0em 0em @color,
+                2em -2em 0 0.2em @color,
+                3em 0em 0 0em @color,
+                2em 2em 0 -0.5em @color,
+                0em 3em 0 -0.5em @color,
+                -2em 2em 0 -0.5em @color,
+                -3em 0em 0 -0.5em @color,
+                -2em -2em 0 -0.5em @color;
+    }
+    25% {
+      box-shadow:
+                0em -3em 0em -0.5em @color,
+                2em -2em 0 0em @color,
+                3em 0em 0 0.2em @color,
+                2em 2em 0 0em @color,
+                0em 3em 0 -0.5em @color,
+                -2em 2em 0 -0.5em @color,
+                -3em 0em 0 -0.5em @color,
+                -2em -2em 0 -0.5em @color;
+    }
+    37.5% {
+      box-shadow:
+                0em -3em 0em -0.5em @color,
+                2em -2em 0 -0.5em @color,
+                3em 0em 0 0em @color,
+                2em 2em 0 0.2em @color,
+                0em 3em 0 0em @color,
+                -2em 2em 0 -0.5em @color,
+                -3em 0em 0 -0.5em @color,
+                -2em -2em 0 -0.5em @color;
+    }
+    50% {
+      box-shadow:
+                0em -3em 0em -0.5em @color,
+                2em -2em 0 -0.5em @color,
+                3m 0em 0 -0.5em @color,
+                2em 2em 0 0em @color,
+                0em 3em 0 0.2em @color,
+                -2em 2em 0 0em @color,
+                -3em 0em 0 -0.5em @color,
+                -2em -2em 0 -0.5em @color;
+    }
+    62.5% {
+      box-shadow:
+                0em -3em 0em -0.5em @color,
+                2em -2em 0 -0.5em @color,
+                3em 0em 0 -0.5em @color,
+                2em 2em 0 -0.5em @color,
+                0em 3em 0 0em @color,
+                -2em 2em 0 0.2em @color,
+                -3em 0em 0 0em @color,
+                -2em -2em 0 -0.5em @color;
+    }
+    75% {
+      box-shadow:
+                0em -2em 0em -0.5em @color,
+                1em -1em 0 -0.5em @color,
+                3em 0em 0 -0.5em @color,
+                2em 2em 0 -0.5em @color,
+                0em 3em 0 -0.5em @color,
+                -2em 2em 0 0em @color,
+                -3em 0em 0 0.2em @color,
+                -2em -2em 0 0em @color;
+    }
+    87.5% {
+      box-shadow:
+                0em -3em 0em 0em @color,
+                2em -2em 0 -0.5em @color,
+                3em 0em 0 -0.5em @color,
+                2em 2em 0 -0.5em @color,
+                0em 3em 0 -0.5em @color,
+                -2em 2em 0 0em @color,
+                -3em 0em 0 0em @color,
+                -2em -2em 0 0.2em @color;
+    }
+  }
+}
+
+.loading-animate-8(){
+  @bdw:0.7em;
+  .loader {
+    margin: 80/@rem auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: @bdw solid rgba(255, 255, 255, 0.2);
+    border-right: @bdw solid rgba(255, 255, 255, 0.2);
+    border-bottom: @bdw solid rgba(255, 255, 255, 0.2);
+    border-left: @bdw solid #ffffff;
+    -webkit-animation: load 1.1s infinite linear;
+    animation: load 1.1s infinite linear;
+  }
+  .loader,
+  .loader:after {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+  }
+
+  @-webkit-keyframes load {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes load {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

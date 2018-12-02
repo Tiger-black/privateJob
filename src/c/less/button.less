@@ -1,0 +1,92 @@
+@import "variable.less";
+//渐变颜色1
+@color-gradient1: @blue;
+//渐变颜色2
+@color-gradient2: @blue-bright;
+//禁止点击颜色
+@color-disabled: #919ab4;
+
+@button-radius: 16/@rem;
+//中等长度按钮
+.button-moder() {
+  .button-style-full();
+  height: 96/@rem;
+  line-height: 88/@rem;
+  border-radius: @button-radius;
+  font-size: 36/@rem;
+}
+
+//普通按钮
+.button-normal() {
+  .button-style-full();
+  height: 96/@rem;
+  line-height: 88/@rem;
+  border-radius: @button-radius;
+  font-size: 36/@rem;
+}
+
+//长按钮
+.button-long() {
+  .button-style-full();
+  width: 100%;
+  height: 96/@rem;
+  line-height: 88/@rem;
+  border-radius: @button-radius;
+  font-size: 36/@rem;
+}
+
+//镂空按钮, @文字颜色,@边框颜色
+.button-hollow(@a:@blue, @b:@gray-light) {
+  .button-style-hollow(@a, @b);
+  height: 96/@rem;
+  line-height: 88/@rem;
+  border-radius: 2px;
+  font-size: 36/@rem;
+}
+
+//第三步用蓝按钮
+.three-buntton() {
+  width: 510/@rem;
+  height: 96/@rem;
+  line-height: 96/@rem;
+  color: #fff;
+  margin: 68/@rem auto 0;
+  text-align: center;
+  background: #f00;
+  border-radius: 50/@rem;
+  .color-gradient(top, bottom, @color-gradient1, @color-gradient2);
+}
+
+//
+.button-style-full() {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  .color-gradient(top, bottom, @color-gradient1, @color-gradient2);
+  &:active {
+    background: @color-gradient2;
+  }
+  &[disabled], &.disabled {
+    background: @color-disabled;
+  }
+}
+
+.button-style-hollow(@color:@blue, @b-color:@blue) {
+  display: inline-block;
+  color: @color;
+  border: 1px solid @b-color;
+  background-color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  &:active {
+    color: @color-gradient2;
+  }
+}
+
+//
+.color-gradient(@start, @end, @color1, @color2) {
+  background: -webkit-gradient(linear, 0 0, 100% @end, from(@color1), to(@color2));
+  background: linear-gradient(@start @end, @color1, @color2);
+}

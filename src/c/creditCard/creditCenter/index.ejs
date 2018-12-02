@@ -1,0 +1,57 @@
+<%if(data.cardList.length>0){$('.list-warpper').css('background','#fff');$('.J_load_more').show()%>
+    <%data.cardList.forEach(function(item,val){%>
+        <div class='list_cont'>
+            <div class='credit_content' data-id='<%= item.cardId%>' data-index='<%= val%>'>
+                    <div class="credit_content_left">
+                        <div class="credit_content_left_name">
+                            <%= item.name%>
+                        </div>
+                        <%if(item.tagList){%>
+                            <div class="credit_content_left_card">
+                                <%item.tagList.forEach(function(card,t){%>
+                                    <span class='card_name'>
+                                        <%= card%>
+                                    </span>
+                                    <%})%>
+                            </div>
+                            <%}%>
+                        <%if(item.privilegeList){%>
+                            <ul class="credit_content_left_point">
+                                <%item.privilegeList.forEach(function(point,t){%>
+                                    <li class='point_title'>
+                                        <%= point.title%>
+                                    </li>
+                                    <%})%>
+                            </ul>
+                        <%}%>
+                    </div>
+
+                    <div class="credit_content_right">
+                        <div class="credit_content_right_img">
+                            <%var Imgstr = (item.imgUrl).substring(0,item.imgUrl.lastIndexOf("."));%>
+                            <%var Imgjoin = Imgstr+='_200x200';%>
+                            <%var Imgpin = (item.imgUrl).substring(item.imgUrl.lastIndexOf("."))%>
+                            <%var imageUrl = Imgjoin+Imgpin;%>
+                            <img src="<%= imageUrl%>" alt="">
+                        </div>
+                    </div>
+
+                    <%if(item.summaryList){%>
+                        <ul class="credit_content_left_opencard">
+                            <%item.summaryList.forEach(function(opencard,t){%>
+                                <span class='opencard_title <%if(opencard.type==0){%>orange<%}else{%>red<%}%>'>
+                                    <%= opencard.content%>
+                                </span>
+                                <%})%>
+                        </ul>
+                        <%}%>
+            </div>
+        </div>
+        <%})%>
+<%}else{%>
+    <%$('.list-warpper').css('background','#f8f8f8');$('.J_load_more').hide()%>
+    <div class='nomore' style='background:#f8f8f8;'>
+        <img class='noimg' src="//img.shuqucdn.com/group1/M00/00/05/wKgX2Fplp36AWiauAAAZTKeyekc852.png" alt="">
+        <div class='noCard'>暂无符合筛选条件的信用卡</div>
+    </div>
+<%}%>

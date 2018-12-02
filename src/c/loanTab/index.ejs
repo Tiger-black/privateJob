@@ -1,0 +1,9 @@
+<ul class="loanTab tab1">
+    <% data.forEach(function(data,i){ %>
+	    <% if(i<4){ %>
+	    <li data-type="<%= data.dictcode %>" class="<% if(i == 0){ %>selected<% } %>">
+	        <span><%= data.name %></span>
+	    </li>
+	    <% } %>
+    <% }) %>
+</ul>

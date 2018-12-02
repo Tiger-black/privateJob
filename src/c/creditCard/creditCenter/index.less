@@ -1,0 +1,130 @@
+@import "../../less/variable";
+.list_cont {
+  width: 100%;
+  &:active {
+    background: #FBFBFB;
+  }
+}
+
+.credit_content {
+  // height: 316/@rem;
+  margin: 0 40/@rem;
+  padding: 35/@rem 0;
+  border-bottom: 1px solid #f8f8f8;
+  overflow: hidden;
+  .credit_content_left {
+    display: inline-block;
+    max-width: 430/@rem;
+    .credit_content_left_name {
+      font-family: PingFang-SC-Regular;
+      font-size: 32/@rem;
+      color: #373737;
+      margin-bottom: 10/@rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .credit_content_left_card {
+      margin-bottom: 16/@rem;
+      // display: -webkit-box;
+      .card_name {
+        display: inline-block;
+        font-size: 20/@rem;
+        color: #9D9D9D;
+        letter-spacing: 0;
+        line-height: 32/@rem;
+        border: 1px solid #E2E2E2;
+        border-radius: 2px;
+        padding: 0 3px;
+        padding-top: 2/@rem;
+        margin-bottom: 6/@rem;
+      }
+    }
+    .credit_content_left_point {
+      .point_title {
+        font-size: 24/@rem;
+        color: #9d9d9d;
+        margin-top: 10/@rem;
+        // list-style-type: disc;
+        // margin-left: 30/@rem;
+        &:before {
+          display: inline-block;
+          content: '';
+          width: 3px;
+          height: 3px;
+          background: #9d9d9d;
+          border-radius: 50%;
+          vertical-align: middle;
+          margin-right: 10/@rem;
+        }
+      }
+    }
+  }
+  .credit_content_right {
+    float: right;
+    .credit_content_right_img {
+      width: 200/@rem;
+      height: 126/@rem;
+      // background:red;
+      // box-shadow: 0 0 8/@rem 0 rgba(0, 0, 0, 0.20);
+      img {
+        border-radius: 8/@rem;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .credit_content_left_opencard {
+    float: left;
+    margin-top: 15/@rem;
+    .opencard_title {
+      display: inline-block;
+      border-radius: 2px;
+      font-size: 20/@rem;
+      padding: 0 20/@rem;
+      height: 36/@rem;
+      line-height: 36/@rem;
+      background: #FFEFE2;
+      color: #FF8522;
+    }
+    .orange {
+      background: #FFEFE2;
+      color: #FF8522;
+    }
+    .red {
+      background: #FFEFE2;
+      color: #FB6253;
+    }
+  }
+}
+
+.moreCard {
+  font-size: 20/@rem;
+  color: #9d9d9d;
+  opacity: .4;
+  margin: 60/@rem 0 40/@rem 0;
+  text-align: center;
+}
+
+.nomore {
+  text-align: center;
+  margin: 360/@rem auto 200/@rem auto;
+  .no_list {
+    color: #bdbdbd;
+    text-align: center;
+    font-size: 28/@rem;
+    margin-top: 10/@rem;
+  }
+  .noCard {
+    font-size: 28/@rem;
+    color: #DADADA;
+    text-align: center;
+    margin-top: 24/@rem;
+  }
+  .noimg {
+    display: inline-block;
+    width: 97px;
+    height: 60px;
+    margin: 0 auto;
+  }
+}

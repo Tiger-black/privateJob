@@ -1,0 +1,28 @@
+
+    <div class="selectorContener">
+        <div class="cityselector_title">
+           <p class="provinceTit">省份</p>
+           <p class="cityTit disable">城市</p>
+           <p class="areaTit disable">区县</p>
+        </div>
+        <div id="selector_list">
+            <div class="loading"><p class="iconfont">&#xe61d;</p></div>
+            <div class="loading loading2"><p class="iconfont">&#xe61d;</p></div>
+            <div class="loading loading3"><p class="iconfont">&#xe61d;</p></div>
+            <ul class="province">
+                <% data.forEach(function(item, index){ %>
+                <li data-name='<%= item.areaName %>' data-id="<%= item.id %>">
+                    <%= item.areaName %>
+                </li>
+                <% }); %>
+            </ul>
+            <ul class="city">
+               
+            </ul>
+            <ul class="area">
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="J_selector_mask"></div>

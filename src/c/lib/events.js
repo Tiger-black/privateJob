@@ -1,4 +1,6 @@
 /*
+ * author 德昭
+ * 事件代理, 事件广播;
  * 例子:
  var Event = require('events');
  var obj = {};

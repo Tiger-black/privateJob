@@ -1,3 +1,8 @@
+/**
+ * @fileOverview
+ * @author dezhao
+ */
+
 require('./index.less');
 require('@br/lib/zepto.min');
 var Tpl = require('./index.ejs');

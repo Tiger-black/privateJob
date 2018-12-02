@@ -1,10 +1,9 @@
 require('@br/lib/zepto.min');
 var Toast = require('@br/common/toast/');
-var Autograph = require('@br/lib/autograph');
+var Promise = require('@br/lib/promise');
 
-
-var SHARE_URL = window.location.href.split('#')[0];
-var CONFIG_API = 'https://howto.yilan.tv/user/wechat';
+var SHARE_URL = window.location.href;
+var CONFIG_API = 'https://wechat.xiaqiu.cn/wechatshare/weChat/signature.do';
 var TOAST_TIME = 2000;
 
 function WXShare() {
@@ -13,22 +12,16 @@ function WXShare() {
 
 $.extend(WXShare.prototype, {
     init: function (config) {
+        this.VERSION = '0.0.1';
+        if (config.api) {
+            CONFIG_API = config.api;
+        }
         if (window.wx) {
-            this.date = new Date() *1;
-            var data =  {
-                url: SHARE_URL,
-                app:'howto_h5',
-                app_name:'howto',
-                appid:'yilanh5',
-                timestamp:this.date,
-            };
-            this.getsign = Autograph(data);
             this.getToken(); //页面分享
             this.events();
         } else {
             console.log('非微信环境');
         }
-
     },
 
     events: function () {
@@ -44,19 +37,13 @@ $.extend(WXShare.prototype, {
         $.ajax({
             url: CONFIG_API,
             data: {
-                url: SHARE_URL,
-                app:'howto_h5',
-                app_name:'howto',
-                appid:'yilanh5',
-                timestamp:this.date,
-                sign:this.getsign,
+                url: SHARE_URL
             },
             type: 'get',
             dataType: 'jsonp',
             success: function (data) {
-                // console.log(data)
-                if (data.retcode == 200) {
-                    self.wxConfig(data.data);
+                if (data.code == 0) {
+                    self.wxConfig(data);
                 } else {
                     //new Toast('位置错误:' + data.code, TOAST_TIME);
                 }
@@ -68,44 +55,40 @@ $.extend(WXShare.prototype, {
     },
 
     wxConfig: function (data) {
-        // console.log(data)
         wx.config({
             debug: false,
-            appId: data.appId,
+            appId: data.appid,
             timestamp: Number(data.timestamp),
-            nonceStr: data.nonceStr,
+            nonceStr: data.noncestr,
             signature: data.signature,
             jsApiList: [
-                'checkJsApi',
                 'onMenuShareTimeline',
-                'onMenuShareAppMessage',
-                'onMenuShareQQ',
-                'onMenuShareQZone',
-                'onMenuShareWeibo'
+                'onMenuShareAppMessage'
             ]
         });
     },
 
     bindShare: function (config) {
+        var p = new Promise();
         var _data = {
             link: SHARE_URL, // 分享链接
             title: config.title, // 分享标题
             desc: config.desc, // 分享描述
             imgUrl: config.imgUrl, // 分享图标
             success: function (res) {
-                new Toast('分享成功', TOAST_TIME);
+                p.resolve(res);
+                // new Toast('分享成功', TOAST_TIME);
             },
             cancel: function (res) {
-                new Toast('取消了分享', TOAST_TIME);
+                p.reject(res);
+                // new Toast('取消了分享', TOAST_TIME);
             }
         };
         wx.ready(function () {
-            wx.onMenuShareAppMessage(_data); //分享给朋友
-            wx.onMenuShareTimeline(_data);  //分享到朋友圈
-            wx.onMenuShareQQ(_data); //分享到QQ
-            wx.onMenuShareQZone(_data);//分享到QQ空间
-            wx.onMenuShareWeibo(_data); //分享到微博
+            wx.onMenuShareTimeline(_data);
+            wx.onMenuShareAppMessage(_data);
         });
+        return p;
     }
 });
 

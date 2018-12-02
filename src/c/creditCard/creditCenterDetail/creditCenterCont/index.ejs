@@ -1,0 +1,62 @@
+<%if(data){%>
+    <div class="credit_img">
+        <img src="<%= data.imgUrl%>" alt="">
+    </div>
+    <div class="credit_name">
+        <%= data.name%>
+    </div>
+    <%if(data.tagList){%>
+        <div class="credit_tagList">
+            <%data.tagList.forEach(function(card,t){%>
+                <span class='card_name'>
+                    <%= card%>
+                </span>
+                <%})%>
+        </div>
+    <%}%>
+
+    <%if(data.privilegeList){%>
+        <div class="privilege_cont">
+            <div class="privilege_title">
+                <span class="privilege_title_img">
+                    <img src="//img.shuqucdn.com/group1/M00/00/05/wKgX2Vplp36AUmJBAAAMZcv7Gvo764.png" alt="">
+                </span>
+                <span class='privilege_title_title'>专属权益</span>
+            </div>
+            <%data.privilegeList.forEach(function(privilege,t){%>
+                <div class="privilege_cont_cont">
+                    <div class="privilege_cont_title"><%= privilege.title%></div>
+                    <%privilege.messageList.forEach(function(message,val){%>
+                        <div class="privilege_cont_message"><%= message%></div>
+                    <%})%>
+                </div>
+            <%})%>
+        </div>
+    <%}%>
+
+
+    <%if(data.feeList){%>
+        <div class="fee_cont">
+            <div class="privilege_title">
+                <span class="privilege_title_img">
+                    <img src='//img.shuqucdn.com/group1/M00/00/02/wKgX4Vplp36ACBH7AAAOHX0e48A804.png' alt="">
+                </span>
+                <span class='privilege_title_title'>相关费用</span>
+            </div>
+            <%data.feeList.forEach(function(fee,t){%>
+                <div class="privilege_cont_cont">
+                    <div class="privilege_cont_title">
+                        <%= fee.title%>
+                    </div>
+                    <%fee.messageList.forEach(function(feemessage,val){%>                    
+                        <div class="privilege_cont_message"><%= feemessage%></div>
+                    <%})%>
+                </div>
+            <%})%>
+        </div>
+    <%}%>
+    <div class="fulldiv"></div>
+    <div class="buttons">
+        <button class="submitButton">提交申请</button>
+    </div>
+   <%}%>

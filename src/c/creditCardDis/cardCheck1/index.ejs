@@ -1,0 +1,10 @@
+
+
+<ul class="tagone">
+    <% data.forEach(function(item, index){%>
+    <li  data-index='<%= index%>'>
+        <div class="disCheck <% if(index%2==1){%>liRight<%}else{%>liLeft<%}%>"><%= item%></div>
+    </li>
+    <% }); %>
+</ul>
+<div class="nextone"><button class="disBtn"></button><button class="nextBtn disview"></button></div>

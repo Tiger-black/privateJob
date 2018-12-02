@@ -1,0 +1,18 @@
+
+<ul class="productWarp">
+	<%data.forEach(function(item){ %>
+		<li class='productItem'>
+			<div class="topTitle"><img src="<%= item.logoimg.replace(/(.*)\./, '$1_45x45q90.')%>"/><h3><%= item.name%></h3></div>
+			<div class="contener">
+				<div class="left">
+					<span><%= item.amount%>元</span>
+					<p>最高额度</p>
+				</div>
+				<div class="right">
+					<span><%= item.period%><font>还款周期</font></span>
+					<p><font><%= item.limit%></font>月费率，<font><%= item.time%></font>到账</p>
+				</div>
+			</div>
+		</li>
+	<%})%>
+</ul>

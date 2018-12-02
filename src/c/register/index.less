@@ -1,0 +1,66 @@
+@import "../less/variable";
+
+.J_register {
+  .item {
+    width: 560/@rem;
+    height: 96/@rem;
+    margin:0 auto 26/@rem;
+    display: -webkit-box;
+    input {
+      display: block;
+      -webkit-box-flex:1;
+      text-align: left;
+      font-size: 30/@rem;
+      height: 100%;
+      line-height:  100%;
+      padding-left: 36/@rem;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      -webkit-appearance:normal;
+         -moz-appearance:normal;
+              appearance:normal;
+      outline:none;  
+      border:0px; 
+    }
+    input::-webkit-input-placeholder {
+    }
+  }
+  .requestPhone {
+    .delete{
+      width:45/@rem;
+      height:45/@rem;
+      background:url('//img.shuqucdn.com/group1/M00/00/01/wKgX2Vh4RAyAe0OjAAAAxyVG9Aw568.png')no-repeat;
+      background-size: 100% 100%;
+      margin-top: 28/@rem;
+      margin-right:30/@rem;
+      display:none;
+    }
+  }
+  .requstCode {
+    .identify {
+      font-size: 32/@rem;
+      font-family: 'PingFangSC-Medium';
+      opacity: 0.54;
+      -webkit-opacity: 0.54;
+      width: 210/@rem;
+      height:100%;
+    }
+    .disabled{
+      background-color: #ccc;
+    }
+  }
+  .submit {
+    margin: 0 auto;
+    text-align: center;
+    width: 560/@rem;
+    height: 96/@rem;
+    line-height: 100/@rem;
+    .requestCoupon {
+      width: inherit;
+      height: inherit;
+      font-size: 40/@rem;
+      font-family: 'PingFangSC-Semibold';
+      background-color: transparent;
+    }
+  }
+}

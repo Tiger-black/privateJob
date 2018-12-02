@@ -1,0 +1,5 @@
+<%data.cardList.forEach(function(item,val){%>
+    <div class='center_title <%if(val === 0){%>check_title<%}%>' data-index='<%= val%>'>
+         <span class='card_type'><%= item.grade%></span>
+    </div>
+<%})%>

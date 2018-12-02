@@ -1,0 +1,22 @@
+
+<ul class="productWarp">
+	<%data.forEach(function(item){ %>
+		<li class='productItem'>
+			<h3><%= item.name%></h3>
+			<div class="contener">
+				<div class="left">
+					<h4><%= item.amount%></h4>
+					<p>预估额度(元)</p>
+				</div>
+				<div class="center">
+					<p><span><%= item.time%></span>放款</p>
+					<p><span><%= item.limit%></span><%= item.rate%>利率</p>
+					<p><span><%= item.period%></span>期限</p>
+				</div>
+				<div class="right">
+					<img src="//img.shuqucdn.com/group1/M00/00/08/wKgX2FqXxqqAAV7zAAAKliYcdBo434.png" alt="">
+				</div>
+			</div>
+		</li>
+	<%})%>
+</ul>

@@ -1,0 +1,74 @@
+@import "../less/variable";
+
+.loanList{
+  width: 100%;
+  background-color: #ffffff;
+  li{
+    padding: 32/@rem 24/@rem 32/@rem 32/@rem;
+    border-bottom: 1px solid #eeeeee;
+    box-sizing: border-box;
+    &:active {
+      background-color: #eeeeee;
+    }
+    dl{
+      display: -webkit-box;
+      dt{
+        width: 112/@rem;
+        height: 112/@rem;
+        border-radius: 28/@rem;
+        border: 1px solid #eeeeee;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          display: none;
+          display: block;
+        }
+      }
+      dd{
+        padding-top: 4/@rem;
+        padding-left: 24/@rem;
+        -webkit-box-flex:1;
+        .tit{
+          font-size: 28/@rem;
+          font-weight: bold;
+          color: rgba(0,0,0,0.8);
+          span{
+            float: right;
+            color: rgba(0,0,0,0.2);
+            img{
+              width: 32/@rem;
+              height: 32/@rem;
+              display: block;
+              border: none;
+            }
+          }
+        }
+        address{
+          font-size: 24/@rem;
+          margin: 12/@rem 0;
+          color: rgba(0,0,0,0.5);
+          font-style: normal;
+          display:block;
+          white-space:nowrap;
+          overflow:hidden; 
+          text-overflow:ellipsis;
+        }
+        .quota{
+          display: -webkit-box;
+          p{
+            font-size: 24/@rem;
+            color: rgba(0,0,0,0.5);
+            margin-right: 22/@rem;
+            span{
+              color: #FF5D16;
+            }
+            &:nth-of-type(1){
+              width: 260/@rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

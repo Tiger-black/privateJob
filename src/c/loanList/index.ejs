@@ -1,0 +1,21 @@
+<ul class="loanList">
+    <% data.forEach(function(data){ %>
+    <li data-url="<%= data.targeturl %>" data-dictcode="<%= data.dictcode %>">
+        <dl>
+            <dt>
+                <img src="<%= data.imgurl%>" alt="">
+            </dt>
+            <dd>
+                <p class="tit">
+                    <span><img src="//img.shuqucdn.com/group1/M00/00/00/wKgX2Vhh3C6ABNaRAAAA1y9lL5M821.png" alt=""></span><%= data.name%>
+                </p>
+                <address><%= data.represent%></address>
+                <div class="quota">
+                    <p>额度 <span><%= data.minlimit%>-<%= data.maxlimit%></span></p>
+                    <p>借款周期 <span><%= data.minDueTime%> - <%= data.maxDueTime%><%= data.dueTimeUnit%></span></p>
+                </div>
+            </dd>
+        </dl>
+    </li>
+    <% }) %>
+</ul>

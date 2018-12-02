@@ -1,3 +1,8 @@
+/**
+ * @ES5 兼容ES6 promise 方法
+ * @author dezhao
+ */
+
 var Promise = (function() {
 
     var _resolved = 'resolved',

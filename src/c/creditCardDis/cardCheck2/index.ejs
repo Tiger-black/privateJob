@@ -1,0 +1,11 @@
+
+
+<ul class="tagtwo">
+    <% data.forEach(function(item, index){%>
+    <li  data-index='<%= index%>' class="disCheck">
+        <div class="<% if(index%2==1){%>liRight<%}else{%>liLeft<%}%>"><i class="iconfont"><%= item.icon%></i></div>
+        <p><%= item.content%></p>
+    </li>
+    <% }); %>
+</ul>
+<div class="nexttwo"><button class="upBtn"></button><button class="disBtn"></button><button class="nextBtn disview"></button></div>

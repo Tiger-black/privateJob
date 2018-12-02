@@ -1,0 +1,12 @@
+
+<ul>
+	<%data.forEach(function(item){ %>
+		<li class='bankItem'>
+			<img src="<%= item.logoUrl%>" alt="">
+			<p><%= item.name%></p>
+		</li>
+	<%})%>
+	<%if(data.length%3 ===2 ){%>
+		<li class="empty"></li>
+	<%}%>
+</ul>

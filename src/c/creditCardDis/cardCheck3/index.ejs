@@ -1,0 +1,32 @@
+
+<% data.forEach(function(item, index){%>
+<p><%= item.tip%></p>
+<ul class="tagthree <%= item.code%>">
+    <% item.list.forEach(function(li, ind){%>
+    <li  data-index='<%= ind%>' class="disCheck">
+        <div><%= li%></div>
+    </li>
+    <% }); %>
+</ul>
+<% }); %>
+<p>是否持有信用卡</p>
+<div class="cardM">
+    <div class="isOwn">
+        <ul class="cardTag tagthree bankCode">
+            <li class="disCheck">
+                <div>有</div>
+            </li>
+            <li class="disCheck">
+                <div>无</div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="ownCard">
+        <p>持有银行</p>
+        <span>
+             <i class="iconfont jt">&#xe617;</i>
+        </span>
+    </div>
+</div>
+<div class="nextthree"><button class="upBtn"></button><button class="disBtn"></button><button class="nextBtn disview"></button></div>

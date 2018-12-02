@@ -1,3 +1,8 @@
+/**
+ * @fileOverview
+ * @author dezhao
+ * 表单验证
+ */
 
 module.exports = {
 

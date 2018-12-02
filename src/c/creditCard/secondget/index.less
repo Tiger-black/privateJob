@@ -1,0 +1,119 @@
+@rem: 75rem;
+@import "../../less/common";
+.dialogMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  z-index: 2;
+  .secondDialog {
+    box-sizing: border-box;
+    max-width: 628/@rem;
+    min-height: 518/@rem;
+    background-color: #fff;
+    z-index: 9;
+    margin: 0 auto;
+    margin-top: 224/@rem;
+    border-radius: 8/@rem;
+    .dialogTitle {
+      padding-top: 50/@rem;
+      overflow: hidden;
+      margin: 0 60/@rem;
+      margin-bottom: 20/@rem;
+      .dialog_title {
+        font-size: 32/@rem;
+        font-weight: bold;
+        color: #4A4A4A;
+        float: left;
+      }
+      .dialog_close {
+        color: #BDBDBD;
+        font-weight: bold;
+        float: right;
+        font-size: 36/@rem;
+      }
+    }
+    .dialogContent {
+      margin: 0 60/@rem;
+      .errorMessage {
+        height: 30/@rem;
+        color: #F21900;
+        font-size: 24/@rem;
+      }
+      .dialog_cont {
+        height: 88/@rem;
+        margin-top: 30/@rem;
+        background: #FFFFFF;
+        border: 1px solid #DCDCDC;
+        border-radius: 8/@rem;
+        line-height: 88/@rem;
+        text-align: left;
+        input {
+          width: 90%;
+          height: 90%;
+          padding-left: 30/@rem;
+          font-size: 28/@rem;
+          margin-left: 2px;
+        }
+        &:last-child {
+          input {
+            width: 280/@rem;
+          }
+          display: none;
+        }
+        .dialog_getcode {
+          width: 178/@rem;
+          text-align: center;
+          font-family: PingFangSC-Medium;
+          background: none;
+          font-size: 28/@rem;
+          color: #06B1FE;
+          border-left: 1px solid #dcdcdc;
+        }
+      }
+      .border_check {
+        border: 1px solid #06B1FE;
+      }
+      .dialog_cont_phone {
+        margin-top: 10/@rem;
+      }
+      .dialog_cont_code {
+        display: block!important;
+      }
+    }
+    .dialog_submit {
+      text-align: center;
+      margin-top: 60/@rem;
+      .second_submit {
+        border-radius: 8/@rem;
+        font-family: PingFangSC-Medium;
+        width: 508/@rem;
+        height: 90/@rem;
+        text-align: center;
+        line-height: 90/@rem;
+        background: #dddddd;
+        disabled: disabled;
+        // background: #06B1FE;
+        color: white;
+        font-size: 30/@rem;
+      }
+    }
+    .reset {
+      background: #06B1FE!important;
+      disabled: false!important;
+      &:active {
+        background: #009BE1;
+      }
+    }
+    .dialog_tips {
+      color: #4A4A4A;
+      font-size: 24/@rem;
+      margin-top: 20/@rem;
+      text-align: left;
+      margin-left: 60/@rem;
+      padding-bottom: 76/@rem;
+    }
+  }
+}

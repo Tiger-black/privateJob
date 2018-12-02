@@ -1,0 +1,22 @@
+<div class="resultwarp">
+	<ul>
+	<% data.schedule.forEach(function(item){ %>
+		<li>
+			<div class="status">
+				<div class="message">
+					<img src="//img.shuqucdn.com/group1/M00/00/07/wKgX4VqzUgCASp9EAAABK6b19YQ784.png" alt="">
+					<p><%=item.status%></p>
+				</div>
+				<div class="dateMsg"><%= item.applyTime%></div>
+			</div>
+			<dl>
+				<dd><img src="<%= data.logoUrl%>" alt=""></dd>
+				<dt>
+					<h4><%= item.bank%></h4>
+					<p><%= item.pName%></p>
+				</dt>
+			</dl>
+		</li>
+	<%})%>
+	</ul>
+</div>

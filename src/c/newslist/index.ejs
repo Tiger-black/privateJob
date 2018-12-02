@@ -1,0 +1,7 @@
+<div class="J-news-list-block">
+    <% data.forEach(function(item){%>
+    <div class="news-item">
+        <a href="../newsdetail/index.html?<%=item.guid.split('?')[1]%>">【新闻】<strong class="news-title"><%=item.tittle%></strong></a>
+    </div>
+    <%})%>
+</div>

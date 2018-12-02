@@ -1,0 +1,21 @@
+<% if(data.title){ %>
+<div class="title"><%= data.title %></div>
+<% } %>
+<div class="con">
+    <%if(data.iconfont){ %>
+    <div class="icon">
+        <span class="iconfont"><%= data.iconfont %></span>
+    </div>
+    <% } %>
+    <div class="content content1"><%= data.content1 %></div>
+    <div class="content content2"><%= data.content2 %></div>
+    <div class="content content3"><%= data.content3 %></div>
+</div>
+<div class="buttons">
+    <% if(data.cancel){ %>
+    <button class="cancel"><%= data.cancel %></button>
+    <% } %>
+    <% if(data.confirm){ %>
+    <button class="confirm finish_sure iconfont"><%= data.confirm %></button>
+    <% } %>
+</div>

@@ -1,0 +1,33 @@
+<div class="BankSuggest-warp">
+	<ul>
+		<%data.forEach(function(item){ %>
+		<li class='bankSuggestItem'>
+			<dl>
+				<dd>
+					<h4><%=item.name%></h4>
+					<div class="nameArr">
+						<%item.tagList && item.tagList.forEach(function(tagList){ %>
+							<span><%=tagList%></span>
+						<%})%>
+					</div>
+					<%item.privilegeList && item.privilegeList.forEach(function(privilege){ %>
+						<p><%=privilege.title%></p>
+					<%})%>
+				</dd>
+				<dt>
+					<img src="<%=item.imgUrl%>" alt="">
+				</dt>
+			</dl>
+			<% if(item.summaryList){ %>
+			<div class="biaoqian-warp">
+				<% item.summaryList.forEach(function(summary){ %>
+					<p><%=summary.content%></p>
+				<%})%>
+			</div>
+			<% } %>
+
+			<div class="empyt"></div>
+		</li>
+		<%})%>
+	</ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="J_selector">
+    <div class="selector-warpper">
+        <ul class="J_selectArea">
+            <% data.bankList.forEach(function(item, index){%>
+            <li class="J_selectItem <%if($('.J_selected').length>0){%>$('.creditcard_top_left').addClass('checkCenter_title');
+                <%}%> <%if(item.isSelect || (data.bankId == item.id)){%>J_selected<%}%>" data-index='<%= item.id%>'>
+                <span><%= item.name %></span>
+                <span class="iconfont bankCheck">&#xe673;</span>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
