@@ -34,6 +34,7 @@ body {
 
 header {
     width: 100%;
+    position: relative;
     position: fixed;
     top: 0;
     left: 0;
@@ -106,19 +107,74 @@ header {
                 }
             }
             .liCheck {
-                color: rgb(42, 160, 239);
-                ;
                 border-bottom: 2px solid rgb(42, 160, 239);
                 ;
             }
         }
-        .meau{
-            padding: 20px 0 22px;
-            font-size: 36px;
-            height:36px;
-            color: #4A4A4A;
-            letter-spacing: 0.14px;
-            font-weight: bold;
+        .liCheck{
+            color: rgb(42, 160, 239);
+        }
+        .meau {
+            input{
+                display: none
+            }
+            label{
+                span{
+                    display: block;
+                    padding: 20px 0 22px;
+                    font-size: 36px;
+                    height: 36px;
+                    color: #4A4A4A;
+                    letter-spacing: 0.14px;
+                    font-weight: bold;
+                }
+            }
+            .meauBox{
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding-top: 30px;
+                background-color: #fff;
+                transform: translateX(100%);
+                transition: all .3s;
+                max-height: 600px;
+                overflow-y: scroll;
+
+                border: 1px solid #ccc;
+                border-right: none;
+                border-top: none;
+                label{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    span{
+                        padding: 20px;
+                    }
+                }
+                ol{
+                    padding: 50px 0;
+                    li{
+                        padding: 20px 50px;
+                        font-size: 16px;
+                        color: #cccc;
+                        letter-spacing: 0.14px;
+                        font-weight: bold;
+                        display: block;
+                        background-color: transparent;
+                        cursor: pointer;
+                        a{
+                            color: #4A4A4A;
+                        }
+                    }
+                    li + li {
+                        border-bottom: 1px solid #bfdee6;
+                    }
+                }
+            }
+
+            input:checked ~ .meauBox{
+                transform: translateX(0);
+            }
         }
     }
 }
@@ -153,6 +209,7 @@ header {
                     right: 0;
                     margin: auto;
                     h1 {
+                        text-align: center;
                         background-color: transparent;
                         border-width: 0px;
                         color: rgb(255, 255, 255);
@@ -433,39 +490,23 @@ header {
         .top-header {
             .top-header-wrap {
                 font-size: 12px;
-                .address,.opening-hours,.telephone{
+                .address,
+                .opening-hours,
+                .telephone {
                     display: none;
                 }
             }
         }
-        nav {
-            .logo {
-                img {
-                    height: 48px;
-                    width: 48px;
-                    margin-top: -24px;
-                }
-            }
-            ul {
-                display: none;
-            }
-            .meau{
-                padding: 10px 0 12px;
-                font-size: 26px;
-                display: block;
-            }
-        }
-    }
-    .allwarp {
-        padding-top: 100px;
     }
 }
+
 @media only screen and (max-width:545px) {
     header {
         .top-header {
             .top-header-wrap {
                 font-size: 12px;
-                .address,.opening-hours{
+                .address,
+                .opening-hours {
                     display: none;
                 }
             }
@@ -481,7 +522,7 @@ header {
             ul {
                 display: none;
             }
-            .meau{
+            .meau {
                 padding: 10px 0 12px;
                 font-size: 26px;
                 display: block;
@@ -490,6 +531,126 @@ header {
     }
     .allwarp {
         padding-top: 100px;
+        .topwarp {
+            height: 600px;
+            .bg-warp {
+                background-size: 1240px 600px;
+                .top-content {
+                    height: 600px;
+                    .top-content-box {
+                        width: 280px;
+                        height: 303px;
+                        h1 {
+                            font-size: 35px;
+                            line-height: 40px;
+                            margin-bottom: 15px;
+                            text-align: left;
+                        }
+                        p {
+                            font-size: 20px;
+                            line-height: 26px;
+                            text-align: left;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+        .main {
+            .columns {
+                width: 80%;
+                h2 {
+                    font-size: 33px;
+                    font-weight: 300;
+                    margin-bottom: 0;
+                    text-align: left;
+                    line-height: 120px;
+                    height: 120px
+                }
+                .columns-item-warp {
+                    width: 100%;
+                    display: block;
+                    .columns-item {
+                        width: 90%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .product-model-warp {
+                .product-model-box {
+                    ul {
+                        li {
+                            img {
+                                width: 100px;
+                                height: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer {
+            .weare {
+                dl {
+                    margin: 0 auto;
+                    width: 80%;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    dd {
+                        width: 100%;
+                        margin-right: 0;
+                        display: block;
+                        text-align: center;
+                        img {
+                            display: inline-block;
+                            width: 121px;
+                            height: 121px;
+                        }
+                    }
+                    dt {
+                        -webkit-box-flex: 1;
+                        font-size: 18px;
+                        line-height: 27px;
+                    }
+                }
+            }
+            .widget-column-warp {
+                width: 100%;
+                .widget-column-box {
+                    width: 90%;
+                    margin: 0 auto;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    .widget-column {
+                        width: 100%;
+                        margin-right: 0;
+                        h3 {
+                            font-size: 20px;
+                            font-weight: 600;
+                            padding-bottom: 10px;
+                            margin-bottom: 20px;
+                        }
+                        p {
+                            font-size: 15px;
+                            line-height: 1.4;
+                        }
+                        ul {
+                            li {
+                                font-size: 15px;
+                                line-height: 1.4;
+                            }
+                        }
+                    }
+                }
+            }
+            .copyright {
+                padding: 15px 0;
+                p {
+                    font-size: 15px;
+                    line-height: 1.4
+                }
+            }
+        }
     }
 }
 
@@ -497,7 +658,8 @@ header {
     header {
         .top-header {
             .top-header-wrap {
-                .address,.opening-hours{
+                .address,
+                .opening-hours {
                     display: none;
                 }
             }
@@ -513,13 +675,130 @@ header {
             ul {
                 display: none;
             }
-            .meau{
+            .meau {
                 display: block;
             }
         }
     }
     .allwarp {
         padding-top: 120px;
+        .topwarp {
+            .bg-warp {
+                .top-content {
+                    .top-content-box {
+                        width: 424px;
+                        height: 225px;
+                        h1 {
+                            font-size: 35px;
+                            line-height: 40px;
+                            margin-bottom: 15px;
+                            text-align: left;
+                        }
+                        p {
+                            font-size: 20px;
+                            line-height: 26px;
+                            text-align: left;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+        .main {
+            .columns {
+                width: 80%;
+                h2 {
+                    font-size: 33px;
+                    font-weight: 300;
+                    margin-bottom: 0;
+                    text-align: left;
+                    line-height: 120px;
+                    height: 120px
+                }
+                .columns-item-warp {
+                    width: 100%;
+                    display: block;
+                    .columns-item {
+                        width: 90%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .product-model-warp {
+                .product-model-box {
+                    ul {
+                        li {
+                            img {
+                                width: 100px;
+                                height: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer {
+            .weare {
+                dl {
+                    margin: 0 auto;
+                    width: 80%;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    dd {
+                        width: 100%;
+                        margin-right: 0;
+                        display: block;
+                        text-align: center;
+                        img {
+                            display: inline-block;
+                            width: 121px;
+                            height: 121px;
+                        }
+                    }
+                    dt {
+                        -webkit-box-flex: 1;
+                        font-size: 18px;
+                        line-height: 27px;
+                    }
+                }
+            }
+            .widget-column-warp {
+                width: 100%;
+                .widget-column-box {
+                    width: 90%;
+                    margin: 0 auto;
+                    display: -webkit-box;
+                    -webkit-box-pack: justify;
+                    .widget-column {
+                        width: 48%;
+                        margin-right: 0;
+                        h3 {
+                            font-size: 20px;
+                            font-weight: 600;
+                            padding-bottom: 10px;
+                            margin-bottom: 20px;
+                        }
+                        p {
+                            font-size: 15px;
+                            line-height: 1.4;
+                        }
+                        ul {
+                            li {
+                                font-size: 15px;
+                                line-height: 1.4;
+                            }
+                        }
+                    }
+                }
+            }
+            .copyright {
+                padding: 15px 0;
+                p {
+                    font-size: 15px;
+                    line-height: 1.4
+                }
+            }
+        }
     }
 }
 
@@ -543,13 +822,35 @@ header {
             ul {
                 display: none;
             }
-            .meau{
+            .meau {
                 display: block;
             }
         }
     }
     .allwarp {
         padding-top: 120px;
+        .topwarp {
+            .bg-warp {
+                .top-content {
+                    .top-content-box {
+                        width: 626px;
+                        height: 176px;
+                        h1 {
+                            font-size: 35px;
+                            line-height: 40px;
+                            margin-bottom: 20px;
+                            text-align: left;
+                        }
+                        p {
+                            font-size: 21px;
+                            line-height: 29px;
+                            text-align: left;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -562,8 +863,7 @@ header {
                 }
             }
         }
-
-        .meau{
+        .meau {
             display: none;
         }
     }
@@ -571,7 +871,7 @@ header {
 
 @media only screen and (min-width:1150px) {
     header {
-        .meau{
+        .meau {
             display: none;
         }
     }
