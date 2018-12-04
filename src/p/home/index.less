@@ -12,6 +12,11 @@ html {
     color: #4A4A4A;
 }
 
+::-moz-selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
 ::selection {
     background-color: #b3d4fc;
     text-shadow: none;
@@ -135,7 +140,9 @@ header {
                 right: 0;
                 padding-top: 30px;
                 background-color: #fff;
-                transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                        transform: translateX(100%);
+                -webkit-transition: all .3s;
                 transition: all .3s;
                 max-height: 600px;
                 overflow-y: scroll;
@@ -173,7 +180,8 @@ header {
             }
 
             input:checked ~ .meauBox{
-                transform: translateX(0);
+                -webkit-transform: translateX(0);
+                        transform: translateX(0);
             }
         }
     }
@@ -333,10 +341,14 @@ header {
                 ul {
                     display: -webkit-box;
                     -webkit-box-pack: center;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    align-content: space-between;
+                    -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                    -ms-flex-line-pack: justify;
+                        align-content: space-between;
                     padding: 30px 0;
                     li {
                         img {
@@ -386,6 +398,7 @@ header {
             }
         }
     }
+}
     footer {
         width: 100%;
         border-right-style: hidden;
@@ -470,7 +483,6 @@ header {
             }
         }
     }
-}
 
 /*******************
     *浏览器更新提示*
@@ -589,6 +601,7 @@ header {
                 }
             }
         }
+    }
         footer {
             .weare {
                 dl {
@@ -651,7 +664,6 @@ header {
                 }
             }
         }
-    }
 }
 
 @media only screen and (min-width:546px) and (max-width:700px) {
@@ -737,6 +749,7 @@ header {
                 }
             }
         }
+    }
         footer {
             .weare {
                 dl {
@@ -799,7 +812,6 @@ header {
                 }
             }
         }
-    }
 }
 
 @media only screen and (min-width:700px) and (max-width:1024px) {
